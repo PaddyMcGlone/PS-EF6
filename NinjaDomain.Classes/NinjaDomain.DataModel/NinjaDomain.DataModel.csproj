@@ -48,11 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Migrations\201712061859334_initial.cs" />
+    <Compile Include="Migrations\201712061859334_initial.Designer.cs">
+      <DependentUpon>201712061859334_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaDomain.Classes\NinjaDomain.Classes.csproj">
+      <Project>{4e02c676-79b3-45a1-a0d7-520840386d3f}</Project>
+      <Name>NinjaDomain.Classes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712061859334_initial.resx">
+      <DependentUpon>201712061859334_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
