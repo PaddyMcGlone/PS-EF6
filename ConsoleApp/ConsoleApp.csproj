@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{758E2885-7DC1-45EB-8EFF-C3D09D5381AB}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NinjaDomain.DataModel</RootNamespace>
-    <AssemblyName>NinjaDomain.DataModel</AssemblyName>
+    <ProjectGuid>{A196EE2D-1E83-4D51-A983-DF64E739BACF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp</RootNamespace>
+    <AssemblyName>ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\NinjaDomain.Classes\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\NinjaDomain.Classes\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -47,41 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Migrations\201712061859334_initial.cs" />
-    <Compile Include="Migrations\201712061859334_initial.Designer.cs">
-      <DependentUpon>201712061859334_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712101257155_AddingDateOfBirth.cs" />
-    <Compile Include="Migrations\201712101257155_AddingDateOfBirth.Designer.cs">
-      <DependentUpon>201712101257155_AddingDateOfBirth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712132037131_UpdatingNinjaEquipment.cs" />
-    <Compile Include="Migrations\201712132037131_UpdatingNinjaEquipment.Designer.cs">
-      <DependentUpon>201712132037131_UpdatingNinjaEquipment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NinjaDomain.Classes\NinjaDomain.Classes.csproj">
+    <ProjectReference Include="..\NinjaDomain.Classes\NinjaDomain.Classes\NinjaDomain.Classes.csproj">
       <Project>{4e02c676-79b3-45a1-a0d7-520840386d3f}</Project>
       <Name>NinjaDomain.Classes</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712061859334_initial.resx">
-      <DependentUpon>201712061859334_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712101257155_AddingDateOfBirth.resx">
-      <DependentUpon>201712101257155_AddingDateOfBirth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712132037131_UpdatingNinjaEquipment.resx">
-      <DependentUpon>201712132037131_UpdatingNinjaEquipment.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\NinjaDomain.Classes\NinjaDomain.DataModel\NinjaDomain.DataModel.csproj">
+      <Project>{758e2885-7dc1-45eb-8eff-c3d09d5381ab}</Project>
+      <Name>NinjaDomain.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

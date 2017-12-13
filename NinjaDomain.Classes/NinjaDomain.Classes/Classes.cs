@@ -1,12 +1,20 @@
 ﻿using NinjaDomain.Classes.Enums;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NinjaDomain.Classes
 {
     public class Ninja
     {
+        public Ninja()
+        {
+            EquipmentOwned = new List<NinjaEquipment>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public bool ServedInObiwan { get; set; }
         public Clan Clan { get; set; }
         public int ClanId { get; set; }
@@ -25,6 +33,8 @@ namespace NinjaDomain.Classes
         public int Id { get; set; }
         public string Name { get; set; }
         public EquipmentType Type { get; set; }
+
+        [Required]
         public Ninja Ninja { get; set; }
     }
 }
